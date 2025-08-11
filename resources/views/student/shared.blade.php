@@ -6,6 +6,7 @@
     .folder-card {
         border-radius: 12px;
         transition: box-shadow 0.3s ease;
+        
         cursor: default;
         border: 1px solid #e3e6f0;
         background: #fff;
