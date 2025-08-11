@@ -11,6 +11,9 @@ use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\RoutineController;
 use App\Http\Controllers\Teacher\TeachersController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FolderController;
+use App\Http\Controllers\FileController;
+
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
@@ -97,4 +100,11 @@ Route::prefix('/teachers')->group(function(){
         Route::get("/routine","myRoutine")->name("teacher.routine");
         Route::get("/notice","myNotice")->name("teacher.notice");
     });
+
+     Route::get('/folders', [FolderController::class, 'index'])->name('folders.index');
+    Route::post('/folders', [FolderController::class, 'store'])->name('folders.store');
+
+    Route::post('/folders/{folder}/files', [FileController::class, 'store'])->name('files.store');
+        Route::get('/files/{id}/download', [FileController::class, 'download'])->name('files.download');
+  
 });

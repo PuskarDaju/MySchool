@@ -41,9 +41,9 @@ class SubjectSeeder extends Seeder
                 "Database Mangement System"
             ]
         ];
-
+$class_id=1;
         foreach($subs as $class){
-            $class_id=1;
+            
             foreach($class as $subject){
                 Subject::create([
                     "name"=>$subject,

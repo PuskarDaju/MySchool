@@ -57,18 +57,9 @@
                     <i class="bi bi-megaphone"></i> Notices
                 </a>
             </li>
+        
             <li class="nav-item mb-2">
-                <a class="nav-link {{ request()->routeIs('teacher.attendance') ? 'active' : '' }}" href="">
-                    <i class="bi bi-file-text"></i> Attendance Report
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link {{ request()->routeIs('teacher.exams') ? 'active' : '' }}" href="">
-                    <i class="bi bi-pencil-square"></i> Exam Marks
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link {{ request()->routeIs('teacher.files') ? 'active' : '' }}" href="">
+                <a class="nav-link {{ request()->routeIs('teacher.files') ? 'active' : '' }}" href="{{ route('folders.index')}}">
                     <i class="bi bi-folder2-open"></i> Shared Files
                 </a>
             </li>
