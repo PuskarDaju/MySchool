@@ -13,6 +13,7 @@ use App\Http\Controllers\Teacher\TeachersController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FolderController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\StudentsController;
 
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -108,3 +109,16 @@ Route::prefix('/teachers')->group(function(){
         Route::get('/files/{id}/download', [FileController::class, 'download'])->name('files.download');
   
 });
+
+ Route::prefix('/students')->group(function(){
+     Route::get('/dashboard', [StudentsController::class, 'dashboard'])->name('student.dashboard');
+
+    // Routine
+    Route::get('/routine', [StudentsController::class, 'showRoutine'])->name('student.routine');
+
+    // Notices
+    Route::get('/notices', [StudentsController::class, 'notices'])->name('student.notices');
+
+    // Shared Files
+    Route::get('/files', [StudentsController::class, 'sharedFile'])->name('student.files');
+ });
